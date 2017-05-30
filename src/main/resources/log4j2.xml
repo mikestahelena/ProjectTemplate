@@ -4,16 +4,18 @@
         <Console name="Console">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
+        <File name="File" fileName="app.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </File>
     </Appenders>
     <Loggers>
         <Root level="TRACE">
             <AppenderRef ref="Console"/>
         </Root>
-        <logger name="com" level="TRACE">
-            <AppenderRef ref="Console"/>
-        </logger>
-        <logger name="net" level="ERROR">
-            <AppenderRef ref="Console"/>
+        <logger name="Main" level="ERROR">
+            <AppenderRef ref="File"/>
         </logger>
     </Loggers>
 </Configuration>
