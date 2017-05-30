@@ -1,0 +1,2 @@
+# ProjectTemplate
+Simple JPA Project
